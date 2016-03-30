@@ -1,0 +1,20 @@
+group 'com.msi'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
+apply plugin: 'jetty'
+
+repositories {
+    mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+}
